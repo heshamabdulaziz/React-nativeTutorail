@@ -10,13 +10,14 @@ export default function Index() {
   return (
     <View style={styles.container}>
        
-   <Box boxNo="1" style={{backgroundColor:"red",alignSelf:"flex-end"}} />
-   <Box boxNo="2" style={{backgroundColor:"yellow",alignSelf:"flex-start"}} />
-    <Box boxNo="3" style={{backgroundColor:"blue",alignSelf:"center"}} />
-     <Box boxNo="4" style={{backgroundColor:"green",alignSelf:"stretch"}} />
-
-
-
+   <Box  style={{backgroundColor:"red",flexBasis:200} } />
+   <Box  style={{backgroundColor:"yellow",height:200}} />
+    <Box  style={{backgroundColor:"blue"}} />
+     <Box  style={{backgroundColor:"green"}} />
+  <Box  style={{backgroundColor:"red"}} />
+   <Box  style={{backgroundColor:"yellow"}} />
+    <Box  style={{backgroundColor:"blue"}} />
+     <Box  style={{backgroundColor:"green"}} />
     </View>
   );
 }
@@ -24,8 +25,11 @@ export default function Index() {
 
 const styles=StyleSheet.create({
 container:{
-  flex:1,
- 
-  backgroundColor:"darkgrey"}
+flex:1,
+
+
+
+  backgroundColor:"darkgrey"
+}
 
 })

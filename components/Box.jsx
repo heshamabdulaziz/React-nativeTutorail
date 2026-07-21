@@ -1,12 +1,20 @@
 
-import { Text, View} from "react-native";
-export default function Box({boxNo,style}){
+import { Text, View,StyleSheet} from "react-native";
+export default function Box({style}){
 return(
-<View style={style}>
-<Text style={{fontSize:20,fontWeight:"bold",color:"white",margin:"auto"}}>{boxNo}</Text>
+<View style={[styles.box,style]}>
+
 
 </View>
 
 )
 
 }
+const styles=StyleSheet.create({
+box:{
+    backgroundColor:"white",
+    padding:20,
+    marginVertical:10,
+}
+
+})
