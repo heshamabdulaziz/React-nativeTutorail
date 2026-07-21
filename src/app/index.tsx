@@ -8,19 +8,12 @@ import { Color } from "expo-router";
 export default function Index() {
  
   return (
-    <View style={{ flex:1,}}>
+    <View style={{ flex:1,backgroundColor:"white"}}>
        
-    <Welecome name="hesham" country="Canada" style={{padding:20,backgroundColor:"red"}}/>
+   <View style={styles.box}>
 
-      {
-   /*
-  
-Create Custom Componnets 
-
-     */
-    
-      }
-
+  <Text style={{color:"white",fontSize:20,fontWeight:"bold"}}>box_1</Text>
+   </View>
 
 
 
@@ -29,10 +22,22 @@ Create Custom Componnets
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    paddingTop:10
+
+  box: {
+  width:200,
+  height:200,
+  backgroundColor:"red",
+  paddingVertical:50,
+  paddingHorizontal:50,
+  marginVertical:200,
+  marginHorizontal:100,
+   borderWidth:10,
+  borderColor:"black",
+  borderStyle:"dotted",
+  borderTopRightRadius:20,
+  borderBottomLeftRadius:20,
+  
+ 
+
   },
 });
