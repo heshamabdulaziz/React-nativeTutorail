@@ -10,10 +10,10 @@ export default function Index() {
   return (
     <View style={styles.container}>
        
-   <Box boxNo="1" style={{backgroundColor:"red",flex:1}} />
-   <Box boxNo="2" style={{backgroundColor:"yellow",flex:2}} />
-    <Box boxNo="3" style={{backgroundColor:"blue",flex:1}} />
-     <Box boxNo="4" style={{backgroundColor:"green",flex:1}} />
+   <Box boxNo="1" style={{backgroundColor:"red"}} />
+   <Box boxNo="2" style={{backgroundColor:"yellow"}} />
+    <Box boxNo="3" style={{backgroundColor:"blue"}} />
+     <Box boxNo="4" style={{backgroundColor:"green"}} />
 
 
 
@@ -25,7 +25,9 @@ export default function Index() {
 const styles=StyleSheet.create({
 container:{
   flex:1,
-  flexDirection:"row",
+  flexDirection:"column",
+justifyContent:"space-around",
+alignItems:"center",
   backgroundColor:"darkgrey"}
 
 })
