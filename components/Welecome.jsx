@@ -3,7 +3,7 @@ import { Text, View,StyleSheet} from "react-native";
 function Welecome({country,name,style}){
 
  
-// Add inline style 
+// Add  Multiple Styles 
 
 return(
 <View style={style}>

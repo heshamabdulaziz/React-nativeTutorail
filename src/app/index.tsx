@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Welecome from "../../components/Welecome";
+import Box from "../../components/Box";
 import { Text, View,Button, StyleSheet, Alert} from "react-native";
 import { Background } from "expo-router/build/react-navigation";
 import { Color } from "expo-router";
@@ -8,12 +8,12 @@ import { Color } from "expo-router";
 export default function Index() {
  
   return (
-    <View style={{ flex:1,backgroundColor:"white"}}>
+    <View style={styles.container}>
        
-   <View style={styles.box}>
-
-  <Text style={{color:"white",fontSize:20,fontWeight:"bold"}}>box_1</Text>
-   </View>
+   <Box boxNo="1" style={{backgroundColor:"red",flex:1}} />
+   <Box boxNo="2" style={{backgroundColor:"yellow",flex:1}} />
+    <Box boxNo="3" style={{backgroundColor:"blue",flex:1}} />
+     <Box boxNo="4" style={{backgroundColor:"green",flex:1}} />
 
 
 
@@ -21,27 +21,8 @@ export default function Index() {
   );
 }
 
-const styles = StyleSheet.create({
 
-  box: {
-  width:200,
-  height:200,
-  backgroundColor:"red",
-  paddingVertical:50,
-  paddingHorizontal:50,
-  marginVertical:200,
-  marginHorizontal:100,
-   borderWidth:10,
-  borderColor:"black",
-  borderStyle:"dotted",
-  borderTopRightRadius:20,
-  borderBottomLeftRadius:20,
-  shadowColor:"yellow",
-  shadowOffset:{width:30,height:30},
-  shadowOpacity:0.5,
-  shadowRadius:20
+const styles=StyleSheet.create({
+container:{flex:1,backgroundColor:"darkgrey"}
 
- 
-
-  },
-});
+})
