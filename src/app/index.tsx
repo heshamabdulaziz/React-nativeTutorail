@@ -36,7 +36,11 @@ const styles = StyleSheet.create({
   borderStyle:"dotted",
   borderTopRightRadius:20,
   borderBottomLeftRadius:20,
-  
+  shadowColor:"yellow",
+  shadowOffset:{width:30,height:30},
+  shadowOpacity:0.5,
+  shadowRadius:20
+
  
 
   },
