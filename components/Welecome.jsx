@@ -7,8 +7,8 @@ function Welecome({country,name,style}){
 
 return(
 <view style={style}>
-<Text style={{color:"white",fontSize:30,fontWeight:"bold"}} >welecome youre name is :{name}</Text>
-<Text style={{color:"white",fontSize:30,fontWeight:"bold"}}>And youre country is :{country}</Text>
+<Text style={{color:"white",fontSize:20,fontWeight:"bold"}} >welecome youre name is :{name}</Text>
+<Text style={{color:"white",fontSize:20,fontWeight:"bold"}}>And youre country is :{country}</Text>
 
 </view>
 
