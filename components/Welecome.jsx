@@ -7,8 +7,8 @@ function Welecome({country,name,style}){
 
 return(
 <View style={style}>
-<Text style={styles.txt1} >welecome youre name is :{name}</Text>
-<Text style={styles.txt2}>And youre country is :{country}</Text>
+<Text style={[styles.txt,styles.txt1]} >welecome youre name is :{name}</Text>
+<Text style={[styles.txt,styles.txt2]}>And youre country is :{country}</Text>
 
 </View>
 
@@ -21,13 +21,14 @@ return(
  
  { 
 
-// Add  style  using stylesheet
+// Add  Multiple Styles 
 
 }
 
 const styles=StyleSheet.create({
-txt1:{color:"white",fontSize:20,fontWeight:"bold"},
-txt2:{color:"yellow",fontSize:20,fontWeight:"bold"}
+txt:{fontSize:20,fontWeight:"bold"},
+txt1:{color:"white",},
+txt2:{color:"yellow"}
 
 })
 export default Welecome;
