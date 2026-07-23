@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Box from "../../components/Box";
-import { Text, View,Button, StyleSheet, Alert} from "react-native";
+import { Text, View,Button, StyleSheet, Alert,Platform} from "react-native";
 import { Background } from "expo-router/build/react-navigation";
 import { Color } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -32,7 +32,7 @@ flexDirection:"column",
 alignItems:"center",
 
 
-  backgroundColor:"darkgrey"
+  backgroundColor:Platform.OS==="ios"?"darkgrey":"blue"
 }
 
 })
