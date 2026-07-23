@@ -15,7 +15,7 @@ export default function Index() {
        
    <Box  style={{backgroundColor:"red",} } />
    <Box  style={{backgroundColor:"green",flexGrow:1}} />
-   <Box  style={{backgroundColor:"yellow",flexShrink:1}} />
+   <Box  style={{backgroundColor:"blue",flexShrink:1}} />
    
     </View>
     </SafeAreaView>
@@ -30,9 +30,11 @@ flex:1,
 
 flexDirection:"column",
 alignItems:"center",
+...Platform.select({
+  ios:{backgroundColor:"red",
+    color:"white"},
+    web:{backgroundColor:"yellow"}
 
-
-  backgroundColor:Platform.OS==="ios"?"darkgrey":"blue"
-}
-
+  }),
+  }
 })
