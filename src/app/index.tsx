@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Box from "../../components/Box";
-import { Text, View, StyleSheet,Platform, ScrollView} from "react-native";
+import { Text, View, StyleSheet,Platform, ScrollView, FlatList} from "react-native";
 import { Background } from "expo-router/build/react-navigation";
 import { Color } from "expo-router";
 
@@ -11,60 +11,130 @@ export default function Index() {
 //retern data from list 
 
 const users = [
-  { id: 1, name: "Hesham", age: 38 },
-  { id: 2, name: "Ahmed", age: 25 },
-  { id: 3, name: "Mohammed", age: 31 },
-  { id: 4, name: "Ali", age: 29 },
-  { id: 5, name: "Omar", age: 34 },
-  { id: 6, name: "Yousef", age: 27 },
-  { id: 7, name: "Khalid", age: 40 },
-  { id: 8, name: "Abdullah", age: 22 },
-  { id: 9, name: "Ibrahim", age: 36 },
-  { id: 10, name: "Saad", age: 30 },
-  { id: 11, name: "Fahad", age: 28 },
-  { id: 12, name: "Nasser", age: 33 },
-  { id: 13, name: "Majed", age: 41 },
-  { id: 14, name: "Salem", age: 24 },
-  { id: 15, name: "Tariq", age: 39 },
-  { id: 16, name: "Anas", age: 26 },
-  { id: 17, name: "Zaid", age: 32 },
-  { id: 18, name: "Amr", age: 35 },
-  { id: 19, name: "Bilal", age: 23 },
-  { id: 20, name: "Hassan", age: 37 },
-  { id: 21, name: "Samir", age: 29 },
-  { id: 22, name: "Rami", age: 42 },
-  { id: 23, name: "Karim", age: 31 },
-  { id: 24, name: "Adel", age: 27 },
-  { id: 25, name: "Jamal", age: 45 },
-  { id: 26, name: "Mahmoud", age: 34 },
-  { id: 27, name: "Nabil", age: 28 },
-  { id: 28, name: "Wael", age: 36 },
-  { id: 29, name: "Bassam", age: 40 },
-  { id: 30, name: "Sami", age: 21 },
-  { id: 31, name: "Firas", age: 33 },
-  { id: 32, name: "Mustafa", age: 38 },
-  { id: 33, name: "Ayman", age: 26 },
-  { id: 34, name: "Yasser", age: 44 },
-  { id: 35, name: "Hamza", age: 30 },
+  { id: 1, name: "Liam", age: 24 },
+  { id: 2, name: "Olivia", age: 28 },
+  { id: 3, name: "Noah", age: 31 },
+  { id: 4, name: "Emma", age: 26 },
+  { id: 5, name: "James", age: 35 },
+  { id: 6, name: "Sophia", age: 29 },
+  { id: 7, name: "William", age: 41 },
+  { id: 8, name: "Isabella", age: 23 },
+  { id: 9, name: "Benjamin", age: 37 },
+  { id: 10, name: "Mia", age: 30 },
+  { id: 11, name: "Lucas", age: 27 },
+  { id: 12, name: "Charlotte", age: 32 },
+  { id: 13, name: "Henry", age: 45 },
+  { id: 14, name: "Amelia", age: 21 },
+  { id: 15, name: "Alexander", age: 39 },
+  { id: 16, name: "Harper", age: 25 },
+  { id: 17, name: "Daniel", age: 34 },
+  { id: 18, name: "Evelyn", age: 28 },
+  { id: 19, name: "Matthew", age: 33 },
+  { id: 20, name: "Abigail", age: 24 },
+  { id: 21, name: "Michael", age: 42 },
+  { id: 22, name: "Emily", age: 36 },
+  { id: 23, name: "Ethan", age: 29 },
+  { id: 24, name: "Elizabeth", age: 31 },
+  { id: 25, name: "Jacob", age: 27 },
+  { id: 26, name: "Avery", age: 22 },
+  { id: 27, name: "Logan", age: 40 },
+  { id: 28, name: "Sofia", age: 26 },
+  { id: 29, name: "Jackson", age: 35 },
+  { id: 30, name: "Ella", age: 30 },
+  { id: 31, name: "Sebastian", age: 28 },
+  { id: 32, name: "Scarlett", age: 34 },
+  { id: 33, name: "Jack", age: 38 },
+  { id: 34, name: "Grace", age: 23 },
+  { id: 35, name: "Aiden", age: 41 },
+  { id: 36, name: "Chloe", age: 27 },
+  { id: 37, name: "Owen", age: 33 },
+  { id: 38, name: "Victoria", age: 29 },
+  { id: 39, name: "Samuel", age: 24 },
+  { id: 40, name: "Riley", age: 32 },
+  { id: 41, name: "Joseph", age: 36 },
+  { id: 42, name: "Aria", age: 25 },
+  { id: 43, name: "David", age: 39 },
+  { id: 44, name: "Lily", age: 28 },
+  { id: 45, name: "John", age: 44 },
+  { id: 46, name: "Hannah", age: 22 },
+  { id: 47, name: "Wyatt", age: 31 },
+  { id: 48, name: "Zoey", age: 26 },
+  { id: 49, name: "Luke", age: 37 },
+  { id: 50, name: "Natalie", age: 30 },
+  { id: 51, name: "Gabriel", age: 29 },
+  { id: 52, name: "Leah", age: 35 },
+  { id: 53, name: "Carter", age: 27 },
+  { id: 54, name: "Audrey", age: 24 },
+  { id: 55, name: "Julian", age: 38 },
+  { id: 56, name: "Claire", age: 33 },
+  { id: 57, name: "Isaac", age: 40 },
+  { id: 58, name: "Brooklyn", age: 21 },
+  { id: 59, name: "Leo", age: 26 },
+  { id: 60, name: "Lucy", age: 29 },
+  { id: 61, name: "Nathan", age: 34 },
+  { id: 62, name: "Anna", age: 31 },
+  { id: 63, name: "Aaron", age: 42 },
+  { id: 64, name: "Ellie", age: 23 },
+  { id: 65, name: "Christopher", age: 36 },
+  { id: 66, name: "Stella", age: 28 },
+  { id: 67, name: "Andrew", age: 32 },
+  { id: 68, name: "Hazel", age: 27 },
+  { id: 69, name: "Thomas", age: 41 },
+  { id: 70, name: "Aurora", age: 25 },
+  { id: 71, name: "Charles", age: 39 },
+  { id: 72, name: "Savannah", age: 30 },
+  { id: 73, name: "Josiah", age: 28 },
+  { id: 74, name: "Penelope", age: 34 },
+  { id: 75, name: "Isaiah", age: 35 },
+  { id: 76, name: "Bella", age: 22 },
+  { id: 77, name: "Ryan", age: 37 },
+  { id: 78, name: "Violet", age: 26 },
+  { id: 79, name: "Adrian", age: 33 },
+  { id: 80, name: "Mila", age: 29 },
+  { id: 81, name: "Christian", age: 40 },
+  { id: 82, name: "Nora", age: 24 },
+  { id: 83, name: "Jonathan", age: 31 },
+  { id: 84, name: "Camila", age: 27 },
+  { id: 85, name: "Hunter", age: 38 },
+  { id: 86, name: "Layla", age: 30 },
+  { id: 87, name: "Connor", age: 36 },
+  { id: 88, name: "Lillian", age: 23 },
+  { id: 89, name: "Jeremiah", age: 34 },
+  { id: 90, name: "Paisley", age: 28 },
+  { id: 91, name: "Colton", age: 41 },
+  { id: 92, name: "Addison", age: 26 },
+  { id: 93, name: "Robert", age: 39 },
+  { id: 94, name: "Skylar", age: 25 },
+  { id: 95, name: "Nicholas", age: 32 },
+  { id: 96, name: "Madison", age: 29 },
+  { id: 97, name: "Dominic", age: 35 },
+  { id: 98, name: "Willow", age: 24 },
+  { id: 99, name: "Xavier", age: 37 },
+  { id: 100, name: "Ruby", age: 27 },
+  { id: 101, name: "Victor", age: 43 },
+  { id: 102, name: "Alice", age: 22 },
+  { id: 103, name: "George", age: 33 },
+  { id: 104, name: "Eva", age: 28 },
+  { id: 105, name: "Anthony", age: 40 },
 ];
   return (
-   
-    <ScrollView style={styles.container}>
- {
-users.map((user)=>
-<View key={user.id} style={styles.card}>
-<Text style={styles.txt} >{user.name}</Text>
-<Text style={styles.txt} >{user.age}</Text>
+
+<FlatList data={users}
+renderItem={({item,index})=>{
+  console.log(index);
+  
+return(
+<View key={index} style={styles.card}>
+<Text style={styles.txt} >{item.name}</Text>
+<Text style={styles.txt} >{item.age}</Text>
 
 </View>
+ )
 
-
-)
-
-
- }
+ }} />
+ 
    
-    </ScrollView>
+   
    
   );
 }
