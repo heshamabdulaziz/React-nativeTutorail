@@ -52,7 +52,7 @@ const users = [
     <View style={styles.container}>
  {
 users.map((user)=>
-<View id={user.id}>
+<View key={user.id} style={styles.card}>
 <Text style={styles.txt} >{user.name}</Text>
 <Text style={styles.txt} >{user.age}</Text>
 
@@ -74,7 +74,7 @@ const styles=StyleSheet.create({
 container:{
 flex:1,
 flexDirection:"column",
-alignItems:"center",
+alignItems:"stretch",
 ...Platform.select({
   ios:{backgroundColor:"red",
     color:"white"},
@@ -83,7 +83,11 @@ alignItems:"center",
   }),
   
   },
+  card:{backgroundColor:"darkorange",
+    margin:20,
+    borderRadius:10,
+  },
   txt:{fontSize:25,
-textAlign:"center",
-    fontWeight:"bold"}
+   textAlign:"center",
+    fontWeight:"bold",color:"white"}
 })
