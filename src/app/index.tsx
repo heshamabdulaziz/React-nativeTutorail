@@ -3,11 +3,14 @@ import Box from "../../components/Box";
 import { Text, View,Button, StyleSheet, Alert} from "react-native";
 import { Background } from "expo-router/build/react-navigation";
 import { Color } from "expo-router";
+import { SafeAreaView } from "react-native-safe-area-context";
+
 
 
 export default function Index() {
  
   return (
+    <SafeAreaView>
     <View style={styles.container}>
        
    <Box  style={{backgroundColor:"red",} } />
@@ -15,6 +18,7 @@ export default function Index() {
    <Box  style={{backgroundColor:"yellow",flexShrink:1}} />
    
     </View>
+    </SafeAreaView>
   );
 }
 
