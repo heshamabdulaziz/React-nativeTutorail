@@ -10,14 +10,10 @@ export default function Index() {
   return (
     <View style={styles.container}>
        
-   <Box  style={{backgroundColor:"red",flexBasis:200} } />
-   <Box  style={{backgroundColor:"yellow",height:200}} />
-    <Box  style={{backgroundColor:"blue"}} />
-     <Box  style={{backgroundColor:"green"}} />
-  <Box  style={{backgroundColor:"red"}} />
-   <Box  style={{backgroundColor:"yellow"}} />
-    <Box  style={{backgroundColor:"blue"}} />
-     <Box  style={{backgroundColor:"green"}} />
+   <Box  style={{backgroundColor:"red",} } />
+   <Box  style={{backgroundColor:"green",flexGrow:1}} />
+   <Box  style={{backgroundColor:"yellow",flexShrink:1}} />
+   
     </View>
   );
 }
@@ -27,6 +23,9 @@ const styles=StyleSheet.create({
 container:{
 flex:1,
 
+
+flexDirection:"column",
+alignItems:"center",
 
 
   backgroundColor:"darkgrey"
