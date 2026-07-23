@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Box from "../../components/Box";
-import { Text, View,Button, StyleSheet, Alert,Platform} from "react-native";
+import { Text, View, StyleSheet,Platform, ScrollView} from "react-native";
 import { Background } from "expo-router/build/react-navigation";
 import { Color } from "expo-router";
 
@@ -49,7 +49,7 @@ const users = [
 ];
   return (
    
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
  {
 users.map((user)=>
 <View key={user.id} style={styles.card}>
@@ -64,7 +64,7 @@ users.map((user)=>
 
  }
    
-    </View>
+    </ScrollView>
    
   );
 }
@@ -74,7 +74,7 @@ const styles=StyleSheet.create({
 container:{
 flex:1,
 flexDirection:"column",
-alignItems:"stretch",
+
 ...Platform.select({
   ios:{backgroundColor:"red",
     color:"white"},
